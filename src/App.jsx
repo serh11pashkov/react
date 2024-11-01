@@ -1,27 +1,30 @@
+// src/App.jsx
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// import resizeHook from '@hooks/resize';
-// import styles from './App.css';
-// import * as styles from './App.css';
-import Header from './components/Header/Header';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact ';
+import Gallery from './pages/Gallery/Gallery';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
-const App = () => {
-    return (
-        <div>
-            <Header />
-            <div id="tabs">
-                <menu>
-                    <button id="btn-why-react" className="active">
-                        Чому React?
-                    </button>
-                    <button id="btn-core-features">Основні переваги (Features)</button>
-                    <button id="btn-resources">Корисні посилання</button>
-                </menu>
-                <div id="tab-content"></div>
-            </div>
-        </div>
-    );
-};
+function App() {
+  return (
+    <Router>
+      <Routes>
 
-// export { App };
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
+  );
+}
+
 export default App;

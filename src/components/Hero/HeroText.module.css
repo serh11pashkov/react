@@ -1,0 +1,39 @@
+
+.text {
+    color: white;
+    text-align: center;
+  }
+  
+  .pretitle {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .description {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }

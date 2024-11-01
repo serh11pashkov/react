@@ -1,16 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import styles from './Header.css';
+import logo from '../../assets/logo.png';
+import styles from './Header.module.css';
 
-// function Header() {};
-const Header = () => (
-    <header className={styles.container}>
-        <div>
-            <h1 className="header">Vanilla JavaScript</h1>
-            <p>тобто, JavaScript без будь яких (UI) фреймворків або бібліотек</p>
-            <p>чистий JavaScript</p>
+function Header() {
+  return (
+    <div className={styles.header}>
+      <div className={styles.headerLeft}>
+        <div className={styles.logo}>
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
         </div>
-    </header>
-);
+      </div>
+      <div className={styles.headerRight}>
+        <div className={styles.nav}>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/login"><button>Login</button></Link></li>
+            <li><Link to="/register"><button>Register</button></Link></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Header;
