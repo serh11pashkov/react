@@ -30,6 +30,17 @@ const basicConfig = {
                     },
                 ],
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i, // File types to match
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]', // Keeps original file paths and names
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
