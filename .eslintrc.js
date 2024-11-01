@@ -1,4 +1,4 @@
-// https://eslint.org/docs/v8.x/
+const path = require('node:path');
 
 const config = {
     env: {
@@ -8,26 +8,20 @@ const config = {
     },
     extends: [
         'eslint:recommended',
-        /* https://www.npmjs.com/package/eslint-plugin-react */
         'plugin:react/recommended',
-        /* https://www.npmjs.com/package/eslint-plugin-react-hooks */
         'plugin:react-hooks/recommended',
-        /*https://www.npmjs.com/package/eslint-plugin-import*/
         'plugin:import/errors',
         'plugin:import/warnings',
-        /*https://www.npmjs.com/package/eslint-plugin-unicorn*/
         'plugin:unicorn/recommended',
-        /*https://www.npmjs.com/package/eslint-plugin-cypress*/
         'plugin:cypress/recommended',
     ],
-    /* https://github.com/import-js/eslint-plugin-import */
     settings: {
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx'],
             },
             webpack: {
-                config: './config/webpack.dev.config.js',
+                config: path.resolve(__dirname, './config/webpack.config.js'), // Absolute path to the Webpack config file in the project root
             },
         },
     },
