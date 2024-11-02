@@ -69,3 +69,38 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
+
+/* Dropdown Menu Styles */
+.avatarContainer {
+  position: relative; /* Ensure the menu positions relative to the avatar */
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 50px; /* Adjust this value to position the menu below the avatar */
+  right: 0;
+  background-color: white; /* Set the background color of the menu */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 0; /* Padding for the menu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure it appears above other content */
+  min-width: 100px; /* Ensure menu width */
+}
+
+.menu button {
+  background-color: transparent; /* No background for the button */
+  border: none; /* No border */
+  color: #333; /* Text color for better visibility */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 0.9rem; /* Smaller font size */
+  padding: 8px 16px; /* Padding for buttons */
+  text-align: left; /* Left-align text */
+  width: 100%; /* Full width of the menu */
+  transition: background-color 0.2s; /* Transition for background color */
+}
+
+.menu button:hover {
+  background-color: #f1f1f1; /* Background color on hover */
+}

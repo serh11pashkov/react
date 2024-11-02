@@ -11,7 +11,48 @@
 body {
     overflow-x: hidden;
 }
+.avatarContainer {
+    position: relative;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px 10px; /* Adjust padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 100px; /* Ensure the menu is wide enough */
+    z-index: 20; /* Make sure the menu is above other elements */
+  }
+  
+  .menu .logoutButton{
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 6px 12px; /* Reduced padding */
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s;
 
+}
+
+.menu .logoutButton:hover {
+    background-color: #ddd; /* Light background on hover */
+    color:black;
+}
+  
 .headerLeft {
     width: 50%;
     display: flex;
@@ -57,7 +98,7 @@ body {
 
 .nav li {
     font-size: 25px;
-    margin-left: 50px;
+    margin-left: 48px;
 }
 
 .nav a {
@@ -77,6 +118,7 @@ body {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 20px;
+    margin-right: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -84,50 +126,5 @@ body {
 .nav button:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .headerLeft,
-    .headerRight {
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .nav li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .nav button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .logo {
-        width: 100px;
-    }
-
-    .nav li {
-        font-size: 20px;
-    }
-
-    .nav button {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
 }
 

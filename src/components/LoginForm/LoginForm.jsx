@@ -1,9 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable unicorn/prevent-abbreviations */
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
+import { auth } from "../../../firebase/firebase";
 import styles from './LoginForm.module.css';
 
 const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/'); 
+    } catch {
+      setError("Failed to login. Please check your credentials and try again.");
+    }
+  };
+
   return (
     <div className={styles.loginBody}>
       <div className={styles.loginContainer}>
@@ -11,13 +30,15 @@ const LoginForm = () => {
           <Link to="/" className={styles.backArrow}>&larr;</Link>
           <h2 className={styles.title}>Login</h2>
         </div>
-        <form>
+        <form onSubmit={handleLogin}>
           <label className={styles.label}>Email/Mobile Phone</label>
-          <input type="text" className={styles.input} />
+          <input type="text" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} />
           
           <label className={styles.label}>Password</label>
-          <input type="password" className={styles.input} />
-          
+          <input type="password" className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} />
+
+          {error && <p className={styles.error}>{error}</p>}
+
           <button type="submit" className={styles.button}>Sign in</button>
         </form>
         <p className={styles.footerText}>

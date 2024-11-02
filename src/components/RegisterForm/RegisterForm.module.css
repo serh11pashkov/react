@@ -101,3 +101,9 @@ body {
 .signUpLink:hover {
     text-decoration: underline;
 }
+
+.error {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  
