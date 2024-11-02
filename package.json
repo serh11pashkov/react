@@ -22,6 +22,7 @@
   "author": "romanbuchuk",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^11.0.1",
     "husky": "^9.1.6",
     "prop-types": "^15.8.1",
     "react": "18.3.1",

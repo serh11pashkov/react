@@ -1,0 +1,110 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #7C6A83; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 100px;
+}
+
+.formWrapper {
+    background-color: #7C6A83;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    padding: 40px; 
+    max-width: 1200px; 
+    width: 100%;
+    color: white;
+    display: flex; 
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between; 
+}
+
+.messageInfo {
+    text-align: center;  
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100%; 
+    padding-right: 40px;
+}
+
+.messageInfo h1 {
+    font-size: 48px;
+    color: white;
+    margin: 0 0 50px 0; 
+}
+
+.messageInfo p {
+    font-size: 18px;
+    color: white;
+    margin: 0; 
+}
+
+
+.form {
+    flex: 1; 
+}
+
+.nameFields {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    font-size: 18px; 
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    padding: 15px; 
+    font-size: 18px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+textarea {
+    height: 180px; 
+    resize: none;
+}
+
+button {
+    padding: 15px 25px; 
+    font-size: 18px; 
+    color: #7C6A83;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; 
+    }
+    .messageInfo {
+        margin-right: 0; 
+    }
+}
