@@ -1,29 +1,48 @@
 const { defineConfig } = require('cypress');
+const webpack = require('@cypress/webpack-preprocessor');
 const webpackConfig = require('./config/webpack.cypress.config');
 
 module.exports = defineConfig({
-  projectId: '8t7wc9',
+    projectId: '8t7wc9',
     component: {
         devServer: {
             framework: 'react',
             bundler: 'webpack',
-            webpackConfig, // webpackConfig: webpackConfig,
+            webpackConfig,
         },
         specPattern: ['src/**/*.cy.{js,jsx}'],
         setupNodeEvents(on, config) {
-            // component testing node events setup code
-            // https://docs.cypress.io/guides/tooling/code-coverage
+            // Code coverage setup
             require('@cypress/code-coverage/task')(on, config);
 
-            on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
+            // Custom Webpack preprocessor for components
+            const options = {
+                webpackOptions: webpackConfig,
+                watchOptions: {},
+            };
+            on('file:preprocessor', webpack(options));
 
             return config;
         },
     },
-
     e2e: {
+        baseUrl: 'http://localhost:9000',
+        devServer: {
+            bundler: 'webpack',
+            webpackConfig,
+        },
+        specPattern: ['cypress/e2e/**/*.cy.{js,jsx}'],
         setupNodeEvents(on, config) {
-            // implement node event listeners here
+            require('@cypress/code-coverage/task')(on, config);
+
+            // Custom Webpack preprocessor for e2e tests
+            const options = {
+                webpackOptions: webpackConfig,
+                watchOptions: {},
+            };
+            on('file:preprocessor', webpack(options));
+
+            return config;
         },
     },
 });
