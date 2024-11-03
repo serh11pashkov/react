@@ -6,6 +6,19 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.(js|jsx)$/i,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['istanbul'], // For code coverage
+                        },
+                    },
+                ],
+            },
+            {
                 test: /\.css$/i,
                 use: [
                     'style-loader',
@@ -14,7 +27,7 @@ const config = {
                         options: {
                             modules: {
                                 mode: 'local',
-                                localIdentName: `[name]_[local]--[hash:base64:5]`,
+                                localIdentName: '[name]_[local]--[hash:base64:5]',
                                 namedExport: false,
                             },
                         },
@@ -22,18 +35,20 @@ const config = {
                 ],
             },
             {
-                test: /\.jsx?$/,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
                     {
-                        loader: 'babel-loader',
+                        loader: 'file-loader',
                         options: {
-                            presets: ['@babel/preset-env', '@babel/preset-react'],
-                            plugins: ['istanbul'],
+                            name: '[path][name].[ext]',
                         },
                     },
                 ],
             },
         ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.css'],
     },
 };
 
