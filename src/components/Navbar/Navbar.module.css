@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  padding: 20px;
+  color: #fff;
+}
+
+.logo {
+  width: 140px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 17px 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  font-size: 25px;
+  margin-left: 50px; 
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Dropdown Menu Styles */
+.avatarContainer {
+  position: relative; /* Ensure the menu positions relative to the avatar */
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 50px; /* Adjust this value to position the menu below the avatar */
+  right: 0;
+  background-color: white; /* Set the background color of the menu */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 0; /* Padding for the menu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure it appears above other content */
+  min-width: 100px; /* Ensure menu width */
+}
+
+.menu button {
+  background-color: transparent; /* No background for the button */
+  border: none; /* No border */
+  color: #333; /* Text color for better visibility */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 0.9rem; /* Smaller font size */
+  padding: 8px 16px; /* Padding for buttons */
+  text-align: left; /* Left-align text */
+  width: 100%; /* Full width of the menu */
+  transition: background-color 0.2s; /* Transition for background color */
+}
+
+.menu button:hover {
+  background-color: #f1f1f1; /* Background color on hover */
+}
