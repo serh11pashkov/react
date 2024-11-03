@@ -42,7 +42,7 @@ function ContactForm() {
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.nameFields}>
                             <div className={styles.formGroup}>
-                                <label htmlFor="firstName">First</label>
+                                <label htmlFor="firstName">First Name</label>
                                 <input
                                     type="text"
                                     id="firstName"
@@ -53,7 +53,7 @@ function ContactForm() {
                                 />
                             </div>
                             <div className={styles.formGroup}>
-                                <label htmlFor="lastName">Last</label>
+                                <label htmlFor="lastName">Last Name</label>
                                 <input
                                     type="text"
                                     id="lastName"

@@ -3,50 +3,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #7d6b7d; 
+    background-color: #7d6b7d;
 }
 
 .reservationContainer {
-    width: 100%; 
-    max-width: 800px; 
-    padding: 60px; 
-    background-color: #7d6b7d; 
-    border-radius: 12px; 
-    text-align: center; 
-    color: #f0f0f0; 
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    background-color: #7d6b7d;
+    border-radius: 12px;
+    text-align: center;
+    color: #f0f0f0;
     border: 3px solid white;
 }
 
 .title {
-    font-size: 36px; 
+    font-size: 36px;
 }
 
 .label {
     display: block;
-    font-size: 22px; 
+    font-size: 22px;
     color: #e0e0e0;
-    margin-top: 20px; 
+    margin-top: 20px;
     text-align: left;
 }
 
 .input {
     width: 100%;
-    padding: 15px; 
-    margin-top: 10px; 
-    border-radius: 8px; 
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 .button {
     width: 100%;
-    padding: 15px; 
-    margin-top: 25px; 
+    padding: 15px;
+    margin-top: 25px;
     border: none;
-    border-radius: 8px; 
+    border-radius: 8px;
     background-color: #b6828c;
     color: white;
-    font-size: 20px; 
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -55,12 +55,37 @@
 }
 
 .error {
-    font-size: 1rem; 
-    margin-top: 10px; 
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 .success {
-    font-size: 1.1rem; 
-    margin-top: 10px; 
+    font-size: 1.1rem;
+    margin-top: 10px;
     color: green;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.backArrow {
+    font-size: 24px;
+    color: #f0f0f0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.backArrow:hover {
+    color: #b6828c;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
 }
